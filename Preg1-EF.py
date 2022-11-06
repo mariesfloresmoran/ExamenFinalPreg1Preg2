@@ -146,13 +146,32 @@ def menu_busqueda_autor_editorial_genero():
 
 # Opción 8: Buscar libros por número de autores.
 
-def menu_busqueda_cant_autores() :
-    pass #borrar el pass cuando se escriba el código
+def menu_busqueda_cant_autores():
+    global libros
+    qautor = int(input ("Ingrese la cantidad de autores por la cual desea buscar: "))
+    resultado_busqueda_qautor = [i for i in libros if len(i.autor) == qautor]
+    if resultado_busqueda_qautor:
+        print("Libros encontrados:")
+        for libro in resultado_busqueda_qautor:
+            print(libro.mostrar_datos())
+    else:
+        print ("No se encontraron coincidencias, intente con otra búsqueda.")
+
 
 # Opción 9: Editar o actualizar datos de un libro (título, género, ISBN, editorial y autores).
 
 def editaractualizarlibro():
-    pass #borrar el pass cuando se escriba el código
+    print("Modificación de Datos\n")
+    id=input("Ingrese el ID del libro a modificar: ")
+    for objLibro in libros:
+        if id == objLibro.id:
+            titulo = input("Ingrese el título: ")
+            genero = input("Ingrese el genero: ")
+            ISBN = input("Ingrese el ISBN: ")
+            editorial = input("Ingrese la Editorial: ")
+            autor = input("Ingrese los autores separados por comas: ")
+            objLibro.editarLibros(titulo, genero, ISBN, editorial, autor)
+            objLibro.mostrar_datos()
 
 # Opción 10: Guardar libros en archivo de disco duro (.txt o csv).
 
