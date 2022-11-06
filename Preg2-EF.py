@@ -29,6 +29,7 @@ def menu_pokemon_generacion():
         pokemon = requests.get(url_pokemon_base + pokemonName).json()
         pokemonData = {'name': pokemonName, 'abilities': [ability['ability']['name'] for ability in pokemon['abilities']], 'image': pokemon['sprites']['front_default']}
         print(pokemonData)
+        
 #Opción 2: Listar pokemons por forma.
 
 def menu_pokemon_forma():
