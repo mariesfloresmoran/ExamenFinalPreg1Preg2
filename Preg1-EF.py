@@ -55,6 +55,14 @@ def mostrar_libros():
 # Opción 1: Leer archivo de disco duro (.txt o csv) que cargue 3 libros.
 
 # Opción 2: Listar libros.
+"""Terminado"""
+def listadoLibros():  
+    print("El nuevo listado es: \n")
+    if libros:
+        for objLibro in libros:
+            print(objLibro.mostrar_datos())
+    else:
+        print("La lista se encuentra vacía.")
 
 # Opción 3: Agregar libro.
 
