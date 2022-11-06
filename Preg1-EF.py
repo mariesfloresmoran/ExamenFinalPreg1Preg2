@@ -17,6 +17,7 @@ Nota: listar libros involucra: título, género, ISBN, editorial y autor(es)
 # BASE
 libros = []
 
+
 class Libro:
     def __init__(self, id, titulo, genero, ISBN, editorial, autor):
         self.id = id
@@ -54,12 +55,52 @@ def mostrar_libros():
 
 # Opción 1: Leer archivo de disco duro (.txt o csv) que cargue 3 libros.
 
+import pandas as pd
+
+url = "https://raw.githubusercontent.com/mariesfloresmoran/ExamenFinalPreg1Preg2/main/Libros.csv"
+disco_duro = read_csv(url, header = 0 )
+
+#print(disco_duro)
+
 # Opción 2: Listar libros.
+"""Terminado"""
+def listadoLibros():  
+    print("El nuevo listado es: \n")
+    if libros:
+        for objLibro in libros:
+            print(objLibro.mostrar_datos())
+    else:
+        print("La lista se encuentra vacía.")
 
 # Opción 3: Agregar libro.
 
+def registrarnuevolibro():
+    print("Registro de Nuevo Libro: \n")
+    id= int(input("Ingrese el numero de ID del Libro: "))
+    titulo= input("Ingrese el Título del Libro: ")
+    genero= input("Ingrese el Género del Libro: ")
+    ISBN= input("Ingrese el numero de ISBN del Libro: ")
+    editorial= input("Ingrese la Editorial del Libro: ")
+    autor = input("Ingrese la lista de autores separada por comas: ")
+    objLibro = Libro(id,titulo,genero,ISBN,editorial,autor.split(","))
+    libros.append(objLibro)
+
 # Opción 4: Eliminar libro.
 
+def eliminarlibro():
+    libro_a_eliminar = input("Ingrese el nombre del libro que desea eliminar: ")
+
+    libro = next((i for i in libros if i.titulo == libro_a_eliminar), None)
+
+    #comprobación:
+    if libro:
+        print("Libro encontrado: ", libro.titulo)
+        print("Borrando ...")
+        libros.remove(libro)
+
+    print("La nueva lista de Libros es: ")
+    for l in libros:
+        print(l)
 # Opción 5: Buscar libro por ISBN o por título.
 
 # Opción 6: Ordenar libros por título.
