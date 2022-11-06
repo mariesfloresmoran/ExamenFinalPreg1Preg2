@@ -73,6 +73,6 @@ def mainmenu():
             menu_pokemon_habitat()
         elif opcion == 5:
             menu_pokemon_tipo()
-        elif ocpion == 6:
+        elif opcion == 6:
             break
 mainmenu()

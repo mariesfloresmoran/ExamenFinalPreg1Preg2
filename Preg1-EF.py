@@ -141,13 +141,22 @@ def ordenar_libro_por_titulo():
 
 # Opción 7: Buscar libros por autor, editorial o género. 
 
+def menu_busqueda_autor_editorial_genero():
+    pass #borrar el pass cuando se escriba el código
+
 # Opción 8: Buscar libros por número de autores.
+
+def menu_busqueda_cant_autores() :
+    pass #borrar el pass cuando se escriba el código
 
 # Opción 9: Editar o actualizar datos de un libro (título, género, ISBN, editorial y autores).
 
+def editaractualizarlibro():
+    pass #borrar el pass cuando se escriba el código
+
 # Opción 10: Guardar libros en archivo de disco duro (.txt o csv).
 
-def Guardar_libros_en_disco_duro()
+def Guardar_libros_en_disco_duro():
     pass
 
 #MENU PRINCIPAL
