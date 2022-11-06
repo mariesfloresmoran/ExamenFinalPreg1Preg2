@@ -74,8 +74,33 @@ def listadoLibros():
 
 # Opción 3: Agregar libro.
 
+def registrarnuevolibro():
+    print("Registro de Nuevo Libro: \n")
+    id= int(input("Ingrese el numero de ID del Libro: "))
+    titulo= input("Ingrese el Título del Libro: ")
+    genero= input("Ingrese el Género del Libro: ")
+    ISBN= input("Ingrese el numero de ISBN del Libro: ")
+    editorial= input("Ingrese la Editorial del Libro: ")
+    autor = input("Ingrese la lista de autores separada por comas: ")
+    objLibro = Libro(id,titulo,genero,ISBN,editorial,autor.split(","))
+    libros.append(objLibro)
+
 # Opción 4: Eliminar libro.
 
+def eliminarlibro():
+    libro_a_eliminar = input("Ingrese el nombre del libro que desea eliminar: ")
+
+    libro = next((i for i in libros if i.titulo == libro_a_eliminar), None)
+
+    #comprobación:
+    if libro:
+        print("Libro encontrado: ", libro.titulo)
+        print("Borrando ...")
+        libros.remove(libro)
+
+    print("La nueva lista de Libros es: ")
+    for l in libros:
+        print(l)
 # Opción 5: Buscar libro por ISBN o por título.
 
 # Opción 6: Ordenar libros por título.
