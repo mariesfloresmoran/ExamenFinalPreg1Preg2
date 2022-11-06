@@ -147,6 +147,9 @@ def ordenar_libro_por_titulo():
 
 # Opción 10: Guardar libros en archivo de disco duro (.txt o csv).
 
+def Guardar_libros_en_disco_duro()
+    pass
+
 #MENU PRINCIPAL
 def mainmenu():
     while True:
@@ -184,4 +187,6 @@ def mainmenu():
             menu_busqueda_cant_autores()  
         elif opcion == 9:
             editaractualizarlibro()
+        elif opcion == 10:
+            Guardar_libros_en_disco_duro()
 mainmenu() 
