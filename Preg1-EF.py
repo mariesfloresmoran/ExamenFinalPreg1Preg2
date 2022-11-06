@@ -38,17 +38,6 @@ class Libro:
         self.autor = autor
         print("Modificación Existosa")
 
-def lista_libros_prueba():
-    libro1 = Libro(1, "Divina Comedia","Tragedia","jjjj","Pacasmayo","Jonathan,Stephanie".split(","))
-    libro2 = Libro(5, "Comedia","Tragedia","jhjh","Luz","Jonatha".split(","))
-    libro3 = Libro(9, "ZZZ","Ficción","hkhk","Luz","Jonatha".split(","))
-    libro4 = Libro(16, "AAA","Comedia","hkhk","Pacasmayo","Jonatha,Stephanie".split(","))
-    libros.append(libro1)
-    libros.append(libro2)
-    libros.append(libro3)
-    libros.append(libro4)
-    print(libros)
-
 def mostrar_libros():
     for libro in libros:
         print(libro.mostrar_datos())
@@ -101,6 +90,7 @@ def eliminarlibro():
     print("La nueva lista de Libros es: ")
     for l in libros:
         print(l)
+
 # Opción 5: Buscar libro por ISBN o por título.
 
 # Opción 6: Ordenar libros por título.
