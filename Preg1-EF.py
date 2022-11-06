@@ -63,6 +63,14 @@ disco_duro = read_csv(url, header = 0 )
 #print(disco_duro)
 
 # Opción 2: Listar libros.
+"""Terminado"""
+def listadoLibros():  
+    print("El nuevo listado es: \n")
+    if libros:
+        for objLibro in libros:
+            print(objLibro.mostrar_datos())
+    else:
+        print("La lista se encuentra vacía.")
 
 # Opción 3: Agregar libro.
 
