@@ -51,35 +51,53 @@ def shape(option):
 
 
 def menu_pokemon_forma():
-  while True:
-    print("Elija la forma del Pokemon:")
-    print("1. Ball")
-    print("2. Squiggle")
-    print("3. Fish")
-    print("4. Arms")
-    print("5. Blob")
-    print("6. Upright")
-    print("7. Legs")
-    print("8. Quadruped")
+    while True:
+        print("Elija la forma del Pokemon:")
+        print("1. Ball")
+        print("2. Squiggle")
+        print("3. Fish")
+        print("4. Arms")
+        print("5. Blob")
+        print("6. Upright")
+        print("7. Legs")
+        print("8. Quadruped")
+        print("9. Wings")
+        print("10. Tentacles")
+        print("11. Humanoid")
+        print("12. Bug-Wings")
+        print("13. Armor")
+        print("14. Volver al Menú Principal")
 
-    option = int(input("Opción: "))
-    if option == 1:
-      shape(option)
-    elif option == 2:
-      shape(option)
-    elif option == 3:
-      shape(option)
-    elif option == 4:
-      shape(option)
-    elif option == 5:
-      shape(option)
-    elif option == 6:
-      shape(option)
-    elif option == 7:
-      shape(option)
-    elif option == 8:
-      shape(option)
-    break
+        option = int(input("Opción: "))
+
+        if option == 1:
+            shape(option)
+        elif option == 2:
+            shape(option)
+        elif option == 3:
+            shape(option)
+        elif option == 4:
+            shape(option)
+        elif option == 5:
+            shape(option)
+        elif option == 6:
+            shape(option)
+        elif option == 7:
+            shape(option)
+        elif option == 8:
+            shape(option)
+        elif option == 9:
+            shape(option)
+        elif option == 10:
+            shape(option)
+        elif option == 11:
+            shape(option)
+        elif option == 12:
+            shape(option)
+        elif option == 13:
+            shape(option)
+        elif option == 14:
+            break
 
 #Opción 3: Listar pokemons por habilidad.
 
