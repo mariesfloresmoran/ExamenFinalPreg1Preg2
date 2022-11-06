@@ -37,17 +37,6 @@ class Libro:
         self.autor = autor
         print("Modificación Existosa")
 
-def lista_libros_prueba():
-    libro1 = Libro(1, "Divina Comedia","Tragedia","jjjj","Pacasmayo","Jonathan,Stephanie".split(","))
-    libro2 = Libro(5, "Comedia","Tragedia","jhjh","Luz","Jonatha".split(","))
-    libro3 = Libro(9, "ZZZ","Ficción","hkhk","Luz","Jonatha".split(","))
-    libro4 = Libro(16, "AAA","Comedia","hkhk","Pacasmayo","Jonatha,Stephanie".split(","))
-    libros.append(libro1)
-    libros.append(libro2)
-    libros.append(libro3)
-    libros.append(libro4)
-    print(libros)
-
 def mostrar_libros():
     for libro in libros:
         print(libro.mostrar_datos())
@@ -55,7 +44,7 @@ def mostrar_libros():
 # Opción 1: Leer archivo de disco duro (.txt o csv) que cargue 3 libros.
 
 # Opción 2: Listar libros.
-"""Terminado"""
+
 def listadoLibros():  
     print("El nuevo listado es: \n")
     if libros:
@@ -70,7 +59,51 @@ def listadoLibros():
 
 # Opción 5: Buscar libro por ISBN o por título.
 
+def menu_busqueda_isbn_titulo():
+    global libros
+    def buscar_por_isbn():
+        isbn = input ("Ingrese la ISBN: ")
+        resultado_busqueda_isbn = [i for i in libros if isbn.lower() in i.ISBN.lower()]
+        if resultado_busqueda_isbn:
+            print("Libros encontrados:")
+            for libro in resultado_busqueda_isbn:
+                print(libro.mostrar_datos())
+                break
+        else:
+            print ("No se encontraron coincidencias, intente con otra búsqueda.")
+
+    def buscar_por_titulo():
+        titulo = input ("Ingrese el Título: ")
+        resultado_busqueda_titulo = [i for i in libros if titulo.lower() in i.titulo.lower()]
+        if resultado_busqueda_titulo:
+            print("Libros encontrados:")
+            for libro in resultado_busqueda_titulo:
+                print(libro.mostrar_datos())
+        else:
+            print ("No se encontraron coincidencias, intente con otra búsqueda.")
+
+    while True:
+        print("Elija la opción por la cual desee buscar:")
+        print("1. Buscar por ISBN")
+        print("2. Buscar por Título")
+        print("3. Para salir")
+        
+        opcion = int(input("Ocpción: "))
+        if opcion == 1:
+            buscar_por_isbn()
+        elif opcion == 2:
+            buscar_por_titulo()
+        elif opcion == 3:
+            break
+
 # Opción 6: Ordenar libros por título.
+
+def ordenar_libro_por_titulo():
+    print("La lista sin ordenar era: ")
+    mostrar_libros()
+    libros.sort(key=lambda libro: libro.titulo)
+    print("La nueva lista ordenada es: ")
+    mostrar_libros()
 
 # Opción 7: Buscar libros por autor, editorial o género. 
 
@@ -81,3 +114,40 @@ def listadoLibros():
 # Opción 10: Guardar libros en archivo de disco duro (.txt o csv).
 
 #MENU PRINCIPAL
+def mainmenu():
+    while True:
+        print("\n")
+        print("            Bienvenidos            ")
+        print("               Menú                ")
+        print("\n")
+        print("Seleccione una de las siguientes opciones: ");
+        print("1. Leer archivo de disco duro")
+        print("2. Listar libros")
+        print("3. Agregar libro")
+        print("4. Eliminar libro")
+        print("5. Buscar libro por ISBN o Título")
+        print("6. Ordenar libros por título")
+        print("7. Buscar libro por autor, editorial o género")
+        print("8. Buscar libros por número de autores")
+        print("9. Editar o actualizar datos de un libro")
+
+        opcion = int(input("Ocpción: "))
+        if opcion == 1:
+            pass
+        elif opcion == 2:
+            listadoLibros()
+        elif opcion == 3:
+            registrarnuevolibro()  
+        elif opcion == 4:
+            eliminarlibro() 
+        elif opcion == 5:
+            menu_busqueda_isbn_titulo()
+        elif opcion == 6:
+            ordenar_libro_por_titulo()
+        elif opcion == 7:
+            menu_busqueda_autor_editorial_genero()
+        elif opcion == 8:
+            menu_busqueda_cant_autores()  
+        elif opcion == 9:
+            editaractualizarlibro()
+mainmenu() 
