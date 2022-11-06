@@ -113,7 +113,6 @@ def ordenar_libro_por_titulo():
 
 # Opción 10: Guardar libros en archivo de disco duro (.txt o csv).
 
-#MENU PRINCIPAL
 def mainmenu():
     while True:
         print("\n")
