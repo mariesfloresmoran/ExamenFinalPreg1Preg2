@@ -29,10 +29,56 @@ def menu_pokemon_generacion():
         pokemon = requests.get(url_pokemon_base + pokemonName).json()
         pokemonData = {'name': pokemonName, 'abilities': [ability['ability']['name'] for ability in pokemon['abilities']], 'image': pokemon['sprites']['front_default']}
         print(pokemonData)
+
 #Opción 2: Listar pokemons por forma.
+def shape(option):
+  pokemonForms = requests.get(
+    f"{url_pokeapi}/pokemon-shape/{option}/").json()['pokemon_species']
+  for pf in pokemonForms:
+    pokemonNumber = pf['url'].replace(
+      'https://pokeapi.co/api/v2/pokemon-species/', '').rstrip('/')
+    pokemon = requests.get(f"{url_pokeapi}/pokemon/{pokemonNumber}").json()
+    pokemonData = {
+      'name':
+      pokemon['name'],
+      'abilities':
+      [ability['ability']['name'] for ability in pokemon['abilities']],
+      'image':
+      pokemon['sprites']['front_default']
+    }
+    print(pokemonData)
+
 
 def menu_pokemon_forma():
-    pass #borrar el pass cuando se escriba el código
+  while True:
+    print("Elija la forma del Pokemon:")
+    print("1. Ball")
+    print("2. Squiggle")
+    print("3. Fish")
+    print("4. Arms")
+    print("5. Blob")
+    print("6. Upright")
+    print("7. Legs")
+    print("8. Quadruped")
+
+    option = int(input("Opción: "))
+    if option == 1:
+      shape(option)
+    elif option == 2:
+      shape(option)
+    elif option == 3:
+      shape(option)
+    elif option == 4:
+      shape(option)
+    elif option == 5:
+      shape(option)
+    elif option == 6:
+      shape(option)
+    elif option == 7:
+      shape(option)
+    elif option == 8:
+      shape(option)
+    break
 
 #Opción 3: Listar pokemons por habilidad.
 
