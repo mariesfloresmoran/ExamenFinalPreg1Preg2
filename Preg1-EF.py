@@ -142,7 +142,6 @@ def ordenar_libro_por_titulo():
 # Opción 7: Buscar libros por autor, editorial o género. 
 
 def menu_busqueda_autor_editorial_genero():
-    def menu_busqueda_autor_editorial_genero():
     def buscar_por_autor():
         autor = input ("Ingrese el Autor: ")
         resultado_busqueda_autor = [i for i in libros if autor.lower() in [j.lower() for j in i.autor]]
