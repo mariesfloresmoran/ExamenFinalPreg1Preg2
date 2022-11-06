@@ -142,7 +142,54 @@ def ordenar_libro_por_titulo():
 # Opción 7: Buscar libros por autor, editorial o género. 
 
 def menu_busqueda_autor_editorial_genero():
-    pass #borrar el pass cuando se escriba el código
+    def menu_busqueda_autor_editorial_genero():
+    def buscar_por_autor():
+        autor = input ("Ingrese el Autor: ")
+        resultado_busqueda_autor = [i for i in libros if autor.lower() in [j.lower() for j in i.autor]]
+        if resultado_busqueda_autor:
+            print("Libros encontrados:")
+            for libro in resultado_busqueda_autor:
+                print(libro.mostrar_datos())
+        else:
+            print ("No se encontraron coincidencias, intente con otra búsqueda.")
+    
+    def buscar_por_editorial():
+        editorial = input ("Ingrese la Editorial: ")
+        resultado_busqueda_editorial = [i for i in libros if editorial.lower() in i.editorial.lower()]
+        if resultado_busqueda_editorial:
+            print("Libros encontrados:")
+            for libro in resultado_busqueda_editorial:
+                print(libro.mostrar_datos())
+        else:
+            print ("No se encontraron coincidencias, intente con otra búsqueda.")
+
+    def buscar_por_genero():
+        genero = input ("Ingrese el Género: ")
+        resultado_busqueda_genero = [i for i in libros if genero.lower() in i.genero.lower()]
+        if resultado_busqueda_genero:
+            print("Libros encontrados:")
+            for libro in resultado_busqueda_genero:
+                print(libro.mostrar_datos())
+        else:
+            print ("No se encontraron coincidencias, intente con otra búsqueda.")
+    
+    global libros
+    while True:
+        print("Elija la opción por la cual desee buscar:")
+        print("1. Buscar por autor")
+        print("2. Buscar por editorial")
+        print("3. Buscar libros por género")
+        print("4. Para salir")
+
+        opcion = int(input("Ocpción: "))
+        if opcion == 1:
+            buscar_por_autor()
+        elif opcion == 2:
+            buscar_por_editorial()
+        elif opcion == 3:
+            buscar_por_genero()
+        elif opcion == 4:
+            break
 
 # Opción 8: Buscar libros por número de autores.
 
