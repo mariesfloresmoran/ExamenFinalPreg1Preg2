@@ -47,7 +47,7 @@ def mostrar_libros():
 import pandas as pd
 
 url = "https://raw.githubusercontent.com/mariesfloresmoran/ExamenFinalPreg1Preg2/main/Libros.csv"
-disco_duro = read_csv(url, header = 0 )
+disco_duro = pd.read_csv(url, header = 0 )
 
 #print(disco_duro)
 
@@ -221,8 +221,9 @@ def editaractualizarlibro():
 
 # Opción 10: Guardar libros en archivo de disco duro (.txt o csv).
 
-def Guardar_libros_en_disco_duro():
-    pass
+disco_duro.extend(objLibro)
+print(disco_duro)
+disco_duro.to_csv(url)
 
 #MENU PRINCIPAL
 def mainmenu():
