@@ -100,14 +100,63 @@ def menu_pokemon_forma():
             break
 
 #Opción 3: Listar pokemons por habilidad.
-
 def menu_pokemon_habilidad():
-    pass #borrar el pass cuando se escriba el código
+  print('Estos son las habilidades')
+  url_ability = f'{url_pokeapi}/ability'
+  pokemonAbilities = requests.get(url_ability).json()['results']
+  i = 1
+  for pf in pokemonAbilities:
+    print(f"{i}. {pf['name']}")
+    i += 1
+
+  ability = input("Ingresa el numero de la habilidad que buscas: ")
+  print(ability)
+
+  pokemons = requests.get(f'{url_ability}/{ability}').json()['pokemon']
+
+  for pf in pokemons:
+    pokemon = requests.get(pf['pokemon']['url']).json()
+    pokemonData = {
+      'name':
+      pokemon['name'],
+      'abilities':
+      [ability['ability']['name'] for ability in pokemon['abilities']],
+      'image':
+      pokemon['sprites']['front_default']
+    }
+    print(pokemonData)
 
 #Opción 4: Listar pokemons por habitat.
 
 def menu_pokemon_habitat():
-    pass #borrar el pass cuando se escriba el código
+  print('Estos son los habitats')
+  url_habitat = f'{url_pokeapi}/pokemon-habitat'
+  pokemonHabitats = requests.get(url_habitat).json()['results']
+  i = 1
+  for pf in pokemonHabitats:
+    print(f"{i}. {pf['name']}")
+    i += 1
+
+  habitat = input("Ingresa el numero del habitat que buscas: ")
+  print(habitat)
+
+  pokemons = requests.get(f'{url_habitat}/{habitat}').json()['pokemon_species']
+
+  for pf in pokemons:
+    pokemonNumber = pf['url'].replace(f'{url_pokeapi}/pokemon-species/',
+                                      '').rstrip('/')
+    pokemon = requests.get(f"{url_pokeapi}/pokemon/{pokemonNumber}").json()
+    pokemonData = {
+      'name':
+      pokemon['name'],
+      'abilities':
+      [ability['ability']['name'] for ability in pokemon['abilities']],
+      'image':
+      pokemon['sprites']['front_default']
+    }
+    print(pokemonData)
+
+
 
 #Opción 5: Listar pokemons por tipo.
 def menu_pokemon_tipo():
