@@ -189,7 +189,7 @@ def menu_busqueda_autor_editorial_genero():
         elif opcion == 3:
             buscar_por_genero()
         elif opcion == 4:
-            break
+            break
 
 # Opción 8: Buscar libros por número de autores.
 
