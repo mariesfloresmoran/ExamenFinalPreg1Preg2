@@ -111,7 +111,32 @@ def menu_pokemon_habitat():
 
 #Opción 5: Listar pokemons por tipo.
 def menu_pokemon_tipo():
-    pass #borrar el pass cuando se escriba el código
+    print('Estos son los tipos: ')
+    url_tipo = f'{url_pokeapi}/type'
+    pokemonTipo = requests.get(url_tipo).json()['results']
+  
+    for pf in pokemonTipo:
+        print(f"{pf['name']}")
+  
+    Types = input("Ingresa el tipo de pokemon que buscas: ")
+    print(Types)
+
+    pokemonss = requests.get(f'{url_tipo}/{Types}').json()['pokemon']
+ 
+    for pf in pokemonss:
+        print(pf)
+        pokemonNumber = pf['pokemon']['url'].replace(f'{url_pokeapi}/pokemon/',
+                                      '').rstrip('/')
+        pokemon = requests.get(f"{url_pokeapi}/pokemon/{pokemonNumber}").json()
+        pokemonData = {
+        'name':
+        pokemon['name'],
+        'abilities':
+        [ability['ability']['name'] for ability in pokemon['abilities']],
+        'image':
+        pokemon['sprites']['front_default']
+        }
+    print(pokemonData)
 
 #MENU PRINCIPAL
 def mainmenu():
