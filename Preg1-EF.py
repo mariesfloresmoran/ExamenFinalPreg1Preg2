@@ -17,6 +17,7 @@ Nota: listar libros involucra: título, género, ISBN, editorial y autor(es)
 # BASE
 libros = []
 
+
 class Libro:
     def __init__(self, id, titulo, genero, ISBN, editorial, autor):
         self.id = id
@@ -53,6 +54,13 @@ def mostrar_libros():
         print(libro.mostrar_datos())
 
 # Opción 1: Leer archivo de disco duro (.txt o csv) que cargue 3 libros.
+
+import pandas as pd
+
+url = "https://raw.githubusercontent.com/mariesfloresmoran/ExamenFinalPreg1Preg2/main/Libros.csv"
+disco_duro = read_csv(url, header = 0 )
+
+#print(disco_duro)
 
 # Opción 2: Listar libros.
 
