@@ -76,6 +76,13 @@ def registrarnuevolibro():
     autor = input("Ingrese la lista de autores separada por comas: ")
     objLibro = Libro(id,titulo,genero,ISBN,editorial,autor.split(","))
     libros.append(objLibro)
+    
+    df_dictionary = pd.DataFrame([libros])
+    print('df_dictionary: ', df_dictionary)
+    out = pd.concat([disco_duro, df_dictionary], ignore_index=True)
+    print(out)
+
+    df = pd.DataFrame()
 
 # Opción 4: Eliminar libro
 
@@ -226,7 +233,7 @@ def editaractualizarlibro():
 def Guardar_libros_en_disco_duro():
     disco_duro.extend(objLibro)
     print(disco_duro)
-    disco_duro.to_csv(url)
+    disco_duro.to_csv(index=False)
 
 #MENU PRINCIPAL
 def mainmenu():
@@ -245,6 +252,7 @@ def mainmenu():
         print("7. Buscar libro por autor, editorial o género")
         print("8. Buscar libros por número de autores")
         print("9. Editar o actualizar datos de un libro")
+        print("10.Guardar datos en archivo de disco duro")
 
         opcion = int(input("Ocpción: "))
         if opcion == 1:
