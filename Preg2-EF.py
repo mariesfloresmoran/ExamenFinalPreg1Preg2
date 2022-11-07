@@ -18,7 +18,8 @@ import json
 print("2**************************************************************************")
 url_pokeapi = 'https://pokeapi.co/api/v2'
 
-#Opción 1: Listar pokemons por generación.
+#Opción 1: Listar pokemons por generación
+
 def menu_pokemon_generacion():
     generacion = int(input ("Ingrese la generación a buscar (1-8): "))
     url_gen = f"https://pokeapi.co/api/v2/generation/{generacion}/"
@@ -30,7 +31,7 @@ def menu_pokemon_generacion():
         pokemonData = {'name': pokemonName, 'abilities': [ability['ability']['name'] for ability in pokemon['abilities']], 'image': pokemon['sprites']['front_default']}
         print(pokemonData)
 
-#Opción 2: Listar pokemons por forma.
+#Opción 2: Listar pokemons por forma
 
 def shape(option):
   pokemonForms = requests.get(
@@ -99,7 +100,8 @@ def menu_pokemon_forma():
         elif option == 14:
             break
 
-#Opción 3: Listar pokemons por habilidad.
+#Opción 3: Listar pokemons por habilidad
+
 def menu_pokemon_habilidad():
   print('Estos son las habilidades')
   url_ability = f'{url_pokeapi}/ability'
@@ -126,7 +128,7 @@ def menu_pokemon_habilidad():
     }
     print(pokemonData)
 
-#Opción 4: Listar pokemons por habitat.
+#Opción 4: Listar pokemons por habitat
 
 def menu_pokemon_habitat():
   print('Estos son los habitats')
@@ -158,7 +160,8 @@ def menu_pokemon_habitat():
 
 
 
-#Opción 5: Listar pokemons por tipo.
+#Opción 5: Listar pokemons por tipo
+
 def menu_pokemon_tipo():
     print('Estos son los tipos: ')
     url_tipo = f'{url_pokeapi}/type'

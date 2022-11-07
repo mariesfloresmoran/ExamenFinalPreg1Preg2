@@ -51,8 +51,8 @@ disco_duro = read_csv(url, header = 0 )
 
 #print(disco_duro)
 
-# Opción 2: Listar libros.
-"""Terminado"""
+# Opción 2: Listar libros
+
 def listadoLibros():  
     print("El nuevo listado es: \n")
     if libros:
@@ -61,7 +61,7 @@ def listadoLibros():
     else:
         print("La lista se encuentra vacía.")
 
-# Opción 3: Agregar libro.
+# Opción 3: Agregar libro
 
 def registrarnuevolibro():
     print("Registro de Nuevo Libro: \n")
@@ -74,7 +74,7 @@ def registrarnuevolibro():
     objLibro = Libro(id,titulo,genero,ISBN,editorial,autor.split(","))
     libros.append(objLibro)
 
-# Opción 4: Eliminar libro.
+# Opción 4: Eliminar libro
 
 def eliminarlibro():
     libro_a_eliminar = input("Ingrese el nombre del libro que desea eliminar: ")
@@ -91,7 +91,7 @@ def eliminarlibro():
     for l in libros:
         print(l)
 
-# Opción 5: Buscar libro por ISBN o por título.
+# Opción 5: Buscar libro por ISBN o por título
 
 def menu_busqueda_isbn_titulo():
     global libros
@@ -130,7 +130,7 @@ def menu_busqueda_isbn_titulo():
         elif opcion == 3:
             break
 
-# Opción 6: Ordenar libros por título.
+# Opción 6: Ordenar libros por título
 
 def ordenar_libro_por_titulo():
     print("La lista sin ordenar era: ")
@@ -139,7 +139,7 @@ def ordenar_libro_por_titulo():
     print("La nueva lista ordenada es: ")
     mostrar_libros()
 
-# Opción 7: Buscar libros por autor, editorial o género. 
+# Opción 7: Buscar libros por autor, editorial o género
 
 def menu_busqueda_autor_editorial_genero():
     def buscar_por_autor():
@@ -190,7 +190,7 @@ def menu_busqueda_autor_editorial_genero():
         elif opcion == 4:
             break
 
-# Opción 8: Buscar libros por número de autores.
+# Opción 8: Buscar libros por número de autores
 
 def menu_busqueda_cant_autores():
     global libros
@@ -204,7 +204,7 @@ def menu_busqueda_cant_autores():
         print ("No se encontraron coincidencias, intente con otra búsqueda.")
 
 
-# Opción 9: Editar o actualizar datos de un libro (título, género, ISBN, editorial y autores).
+# Opción 9: Editar o actualizar datos de un libro (título, género, ISBN, editorial y autores)
 
 def editaractualizarlibro():
     print("Modificación de Datos\n")
@@ -219,7 +219,7 @@ def editaractualizarlibro():
             objLibro.editarLibros(titulo, genero, ISBN, editorial, autor)
             objLibro.mostrar_datos()
 
-# Opción 10: Guardar libros en archivo de disco duro (.txt o csv).
+# Opción 10: Guardar libros en archivo de disco duro (.txt o csv)
 
 def Guardar_libros_en_disco_duro():
     pass
