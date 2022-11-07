@@ -220,10 +220,10 @@ def editaractualizarlibro():
             objLibro.mostrar_datos()
 
 # Opción 10: Guardar libros en archivo de disco duro (.txt o csv)
-
-disco_duro.extend(objLibro)
-print(disco_duro)
-disco_duro.to_csv(url)
+def Guardar_libros_en_disco_duro():
+    disco_duro.extend(objLibro)
+    print(disco_duro)
+    disco_duro.to_csv(url)
 
 #MENU PRINCIPAL
 def mainmenu():
