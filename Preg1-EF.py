@@ -50,7 +50,8 @@ url = "https://raw.githubusercontent.com/mariesfloresmoran/ExamenFinalPreg1Preg2
 disco_duro = pd.read_csv(url, header = 0 )
 
 def Listado_disco_duro(): 
- print(disco_duro)
+    print(disco_duro)
+
 #print(disco_duro)
 
 # Opción 2: Listar libros
